@@ -1,0 +1,28 @@
+<div class="container" ng-controller="demoCtrl">
+
+    <h1>Modify projects</h1>
+    <hr>
+    <div class="col-md-12" ng-controller="mingiAsiCtrl">
+        <table  class="col-md-12 project-table">
+            <thead>
+            <tr class="table-head">
+                <th><h3>Project Name</h3></th>
+                <th class="text-center"><em class="glyphicon glyphicon-cog"></em></th>
+            </tr>
+            </thead>
+            <tbody ng-controller="projectController">
+                <tr ng-repeat="project in projectArray track by $index">
+                    <td>
+                        <p>{{project.name}}</p>
+                    </td>
+                    <td align="center">
+                        <a ui-sref="admin.project({ projectID: $index})" ><em class="glyphicon glyphicon-pencil"></em></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,96 @@
+<div class="container" ng-controller="demoCtrl">
+    <div class="lang-nav admin-lang-nav text-center" ng-controller="mingiAsiCtrl">
+        <button ng-click="lang('et')">Et</button>
+        <button ng-click="lang('en')">En</button>
+        <button ng-click="lang('ru')">Ru</button>
+    </div>
+    <br>
+    <div class="col-md-12" style="text-align:left; margin-left: -15px;">
+        <div class="col-md-3 col-md-offset-2 bluebg text-center">
+            <textarea ng-model="oneArray.LANDINGTITLE1" ng-blur="updateFieldContent('LANDINGTITLE1', oneArray.LANDINGTITLE1)"></textarea>
+            <textarea ng-model="oneArray.LANDINGMESSAGE" ng-blur="updateFieldContent('LANDINGMESSAGE', oneArray.LANDINGMESSAGE)"></textarea>
+            <textarea ng-model="oneArray.LANDINGTITLE2" ng-blur="updateFieldContent('LANDINGTITLE2', oneArray.LANDINGTITLE2)"></textarea>
+
+        </div>
+        <img class="skyscraperAdmin" src="img/skyscraper2.png">
+        <div class="col-md-5">
+            <div class="yellowBarPlace"></div>
+            <div class="blueBarPlace"></div>
+
+        </div>
+    </div>
+    <div class="col-md-12" style="text-align:left; margin-left: -15px;">
+        <div class="col-md-3 col-md-offset-2 greybg text-center">
+            <div class="blackBarPlace text-center"></div>
+            <textarea ng-model="oneArray.INTROTEXT" ng-blur="updateFieldContent('INTROTEXT', oneArray.INTROTEXT)"></textarea>
+
+        </div>
+        <div class="introAdmin text-center">
+            <div class="col-md-6">
+                <input ng-model="oneArray.INTROSUBHEADING1" ng-blur="updateFieldContent('INTROSUBHEADING1', oneArray.INTROSUBHEADING1)">
+                <textarea ng-model="oneArray.INTROSUBTEXT1" ng-blur="updateFieldContent('INTROSUBTEXT1', oneArray.INTROSUBTEXT1)"></textarea>
+                <input ng-model="oneArray.INTROSUBHEADING3" ng-blur="updateFieldContent('INTROSUBHEADING3', oneArray.INTROSUBHEADING3)">
+                <textarea ng-model="oneArray.INTROSUBTEXT3" ng-blur="updateFieldContent('INTROSUBTEXT3', oneArray.INTROSUBTEXT3)"></textarea>
+            </div>
+            <div class="col-md-6">
+                <input ng-model="oneArray.INTROSUBHEADING2" ng-blur="updateFieldContent('INTROSUBHEADING2', oneArray.INTROSUBHEADING2)">
+                <textarea ng-model="oneArray.INTROSUBTEXT2" ng-blur="updateFieldContent('INTROSUBTEXT2', oneArray.INTROSUBTEXT2)"></textarea>
+                <input ng-model="oneArray.INTROSUBHEADING4" ng-blur="updateFieldContent('INTROSUBHEADING4', oneArray.INTROSUBHEADING4)">
+                <textarea ng-model="oneArray.INTROSUBTEXT4" ng-blur="updateFieldContent('INTROSUBTEXT4', oneArray.INTROSUBTEXT4)"></textarea>
+            </div>
+        </div>
+        <div class="col-md-5 bulbsAdmin">
+        </div>
+    </div>
+    <div class="col-md-12" style="text-align:left; margin-left: -15px;">
+        <div class="col-md-2 adminPeople text-center">
+            <div class="adminPerson">
+                <input ng-model="oneArray.CREWNAME1" ng-blur="updateFieldContent('CREWNAME1', oneArray.CREWNAME1)">
+                <img class="adminDude" src="./../img/dude.png">
+                <input ng-model="oneArray.CREWPOS1" ng-blur="updateFieldContent('CREWPOS1', oneArray.CREWPOS1)">
+                <input ng-model="oneArray.CREWMAIL1" ng-blur="updateFieldContent('CREWMAIL1', oneArray.CREWMAIL1)">
+            </div>
+            <div class="adminPerson">
+                <input ng-model="oneArray.CREWNAME2" ng-blur="updateFieldContent('CREWNAME2', oneArray.CREWNAME2)">
+                <img class="adminDude" src="./../img/dude.png">
+                <input ng-model="oneArray.CREWPOS2" ng-blur="updateFieldContent('CREWPOS2', oneArray.CREWPOS2)">
+                <input ng-model="oneArray.CREWMAIL2" ng-blur="updateFieldContent('CREWMAIL2', oneArray.CREWMAIL2)">
+            </div>
+            <div class="adminPerson">
+                <input ng-model="oneArray.CREWNAME3" ng-blur="updateFieldContent('CREWNAME3', oneArray.CREWNAME3)">
+                <img class="adminDude" src="./../img/dude.png">
+                <input ng-model="oneArray.CREWPOS3" ng-blur="updateFieldContent('CREWPOS3', oneArray.CREWPOS2)">
+                <input ng-model="oneArray.CREWMAIL3" ng-blur="updateFieldContent('CREWMAIL3', oneArray.CREWMAIL3)">
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2 fullbg text-center">
+
+            <div class="blackBarPlace people-fix"></div>
+            <textarea ng-model="oneArray.CREWTEXT" ng-blur="updateFieldContent('CREWTEXT', oneArray.CREWTEXT)"></textarea>
+
+        </div>
+    </div>
+    <div class="col-md-12" style="text-align:left; margin-left: -15px;">
+        <div class="col-md-8 col-md-offset-2 contactbg text-center">
+            <div class="col-md-6 col-md-offset-1 admin-map">
+            </div>
+            <div class="admin-info">
+                <h4>Telefon: <input class="admin-info-input" type="text" name="phone" ng-model="oneArray.PHONE" ng-blur="updateFieldContent('PHONE', oneArray.PHONE)"></h4>
+                <h4>Email: <input class="admin-info-input" type="text" name="mail" ng-model="oneArray.MAIL" ng-blur="updateFieldContent('MAIL', oneArray.MAIL)"></h4>
+                <h4>Aadress: <input class="admin-info-input" type="text" name="address" ng-model="oneArray.ADDRESS" ng-blur="updateFieldContent('ADDRESS', oneArray.ADDRESS)"></h4>
+
+            </div>
+            <div class="col-md-5 admin-contact">
+                <div class="col-md-12 smallblackbar"></div>
+                <div class="col-md-12 largeblackbar"></div>
+                <div class="col-md-12 contact-box"></div>
+                <div class="col-md-12 contact-box"></div>
+                <div class="col-md-12 contact-box"></div>
+                <div class="col-md-12 yellowButton"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--<button class="dashboardSubmit">Save Changes</button>-->
+
+</div>

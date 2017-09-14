@@ -1,0 +1,28 @@
+<div class="container">
+
+    <h1>Modify projects</h1>
+    <hr>
+    <div class="col-md-12" >
+        <table  class="col-md-12 project-table">
+            <thead>
+            <tr class="table-head">
+                <th><h3>Project Name</h3></th>
+                <th class="text-center"><em class="glyphicon glyphicon-cog"></em></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="projecto in projects">
+                <td>
+                    <p>{{projecto.ee.name}}</p>
+                </td>
+                <td align="center">
+                    <a ng-click="toProject(projecto._id)"><em class="glyphicon glyphicon-pencil"></em></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>

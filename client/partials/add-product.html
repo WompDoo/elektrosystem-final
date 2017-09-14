@@ -1,0 +1,85 @@
+
+<div class="container">
+    <div class="col-md-12" style="text-align:left;">
+        <h1 class="howdy">Howdy elektronet</h1>
+        <p class="contact-information-text">
+            Add a new product
+        </p>
+    </div>
+    <div class="row" style="margin-top: 125px;">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group">
+                    <label class="add-product-label">Product name</label>
+                    <input type="text" class="form-control-add" name="name" ng-model="productForm.name"/>
+                </div>
+                <div class="form-group">
+                    <label class="add-product-label">Add description</label>
+                    <textarea class="form-control-add-long" name="information" ng-model="productForm.information" />
+                </div>
+                <div class="form-group" style="margin-top: 25px;">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="add-product-label">Price per unit</label>
+                            <input type="text" class="form-control-add-short" name="name" ng-model="productForm.price"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="add-product-label">Quantity</label>
+                            <input type="text" class="form-control-add-short" name="name" ng-model="productForm.quantity"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="add-product-label">MOQ</label>
+                            <input type="text" class="form-control-add-short" name="name" ng-model="productForm.serial"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div style="margin-top:30px;">
+                        <button class="add-product-btn-submit" ng-click="addProduct($event)">ADD PRODUCT</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="dotted-box">
+                <div class="dropbox-text">
+                    <a class="drop-image">Drop image here or upload</a>
+                </div>
+
+            </div>
+            <div class="input-field-container">
+                <input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1" onchange="angular.element(this).scope().filesChanged(this)">
+                <label for="file-1"><span>UPLOAD PICTURE</span></label>
+            </div>
+        </div>
+        <div class="col-md-12" style="text-align:center;">
+            <div ng-show="message" class="alert alert-danger">
+                {{cbMessage}}
+            </div>
+        </div>
+        <!--<form class="form" ng-submit="addProduct()">
+            <div class="form-group">
+                <label>Name of the Product</label>
+                <input type="text" class="form-control" name="name" ng-model="productForm.name" />
+            </div>
+            <div class="form-group">
+                <label>Product price</label>
+                <input type="text" class="form-control" name="price" ng-model="productForm.price" />
+            </div>
+            <div class="form-group">
+                <label>Additional information</label>
+                <input type="text" class="form-control" name="information" ng-model="productForm.information" />
+            </div>
+            <div class="form-group">
+                <input type="file" onchange="angular.element(this).scope().filesChanged(this)" multiple  />
+            </div>
+            <li ng-repeat="file in files">
+                {{file.name}}
+            </li>
+            <div>
+                <button type="submit" class="btn btn-default">Add Product</button>
+            </div>
+        </form>-->
+    </div>
+</div>

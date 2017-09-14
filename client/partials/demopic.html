@@ -1,0 +1,82 @@
+<div class="container">
+    <h1>Modify project</h1>
+    <hr>
+    Project years:
+    <br>
+    <input type="text" name="project_years" ng-model="year" placeholder="ex. 2011-2012"/>
+    <br>
+    <div class="col-md-4">
+        <h2>Estonian texts</h2>
+        <div class="col-md-3">
+            <form>
+                Project name:
+                <br>
+                <input type="text" ng-model="estName">
+                <br>
+                Project category:
+                <br>
+                <input type="text" name="project_category" ng-model="estCat"/>
+                <br>
+                Project description:
+                <br>
+                <textarea ng-model="estDesc " rows="4" cols="50" name="projcet_description"></textarea>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>English texts</h2>
+        <div class="col-md-3">
+            <form>
+                Project name:
+                <br>
+                <input type="text" ng-model="engName">
+                <br>
+                Project category:
+                <br>
+                <input type="text" name="project_category" ng-model="engCat"/>
+                <br>
+                Project description:
+                <br>
+                <textarea ng-model="engDesc " rows="4" cols="50" name="projcet_description"></textarea>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Russian texts</h2>
+        <div class="col-md-3">
+            <form>
+                Project name:
+                <br>
+                <input type="text" ng-model="rusName">
+                <br>
+                Project category:
+                <br>
+                <input type="text" name="project_category" ng-model="rusCat"/>
+                <br>
+                Project description:
+                <br>
+                <textarea ng-model="rusDesc " rows="4" cols="50" name="projcet_description"></textarea>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <h2>Project pictures</h2>
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <button ngf-select="uploadFiles($files)" multiple accept="images/*">Upload files</button>
+                <h2>File names</h2>
+                <ul>
+                    <li ng-repeat="f in files">
+                        {{f.name}}
+                    </li>
+                </ul>
+                <ul ng-show="pildidOnOlemas">
+                    <li ng-repeat="i in images track by $index">
+                        <img src="{{i}}" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
