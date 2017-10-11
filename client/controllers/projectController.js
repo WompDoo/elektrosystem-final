@@ -366,8 +366,14 @@ projectController.controller('projectController', function projectController($sc
     }
 
     $scope.menuUp = function(){
+
         $scope.index--;
         var length = $scope.project[$scope.index].ee.pictures.length;
+
+        $scope.displayCard = 0;
+        $scope.prevButtonHidden = true;
+        $scope.nextButtonHidden = length === 1;
+
         if($scope.index === 0){
             $scope.index = length-1;
         }
@@ -387,9 +393,15 @@ projectController.controller('projectController', function projectController($sc
         $scope.globalPictures = $rootScope.holder.pictures;
     }
     $scope.menuDown = function () {
+
         console.log($scope.index);
         $scope.index++;
         var length = $scope.project[$scope.index].ee.pictures.length;
+
+        $scope.displayCard = 0;
+        $scope.prevButtonHidden = true;
+        $scope.nextButtonHidden = length === 1;
+
         if($scope.index === length-1){
             $scope.index = 0;
         }
