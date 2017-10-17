@@ -50,6 +50,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/dashboard/', routes);
 app.use('/testroot/', routes);
 
+app.use(routes);
 
 // error hndlers
 app.use(function(req, res, next) {

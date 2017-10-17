@@ -5,6 +5,9 @@ var engtext = new Schema({
     LANDINGTITLE1: {type: String, default: "Inglise keel asdasd"},
     LANDINGMESSAGE: {type: String, default: "elektrilahendused"},
     LANDINGTITLE2: {type: String, default: "on kõrgusi ületavad"},
+    LANDINGBUTTON1: {type: String, default: "INQUIRY"},
+    LANDINGBUTTON2: {type: String, default: "About the company"},
+    SIDEMENUINTRO: {type: String, default: "Introduction"},
     INTROTEXT: {type: String, default: "Oleme tugev Eesti ettevõte, kes võtnud oma missiooniks lahendada kõik elektritöödega seotud ülesanded"},
     INTROSUBHEADING1: {type: String, default: "Elektritööd"},
     INTROSUBHEADING2: {type: String, default: "Elektriklipide ehitus"},
@@ -14,6 +17,7 @@ var engtext = new Schema({
     INTROSUBTEXT2: {type: String, default: "Omame pikaajalist kogemust elektrikilpide ehitusel ja remontimisel"},
     INTROSUBTEXT3: {type: String, default: "Meil on oskuslik tööjõud erinevate elektriseadmete installeerimiseks"},
     INTROSUBTEXT4: {type: String, default: "Oleme koostanud elektriprojekte juba ligi 25 aastat"},
+    SIDEMENUCREW: {type: String, default: "Team"},
     CREWTEXT: {type: String, default: "Ettevõtte võtmetegijad annavad asjalikku ja profesionaalset nõu ning meie tehtud tööd räägivad enda eest"},
     CREWPOS1: {type: String, default: "Juhataja"},
     CREWNAME1: {type: String, default: "Priit Laur"},
@@ -24,9 +28,15 @@ var engtext = new Schema({
     CREWPOS3: {type: String, default: "Projektijuhataja"},
     CREWNAME3: {type: String, default: "Sander Seene"},
     CREWMAIL3: {type: String, default: "sander.seene@elektrosystem.ee"},
-    MAIL: {type: String, default: "Tähe 127c, Tartu"},
-    ADDRESS: {type: String, default: "info@elektrosystem.ee"},
-    PHONE: {type: String, default: "+372 7366019"}
+    MAPEXTRA: {type: String, default: "Open in google maps"},
+    MAIL: {type: String, default: "E-mail: info@elektrosystem.ee"},
+    ADDRESS: {type: String, default: "Address: Tähe 127c, Tartu"},
+    PHONE: {type: String, default: "Phone: +372 7366019"},
+    CONTACTHEAD1: {type: String, default: "Want more information?"},
+    CONTACTHEAD2: {type: String, default: "Contact us"},
+    FORMNAME: {type: String, default: "Name"},
+    FORMEMAIL: {type: String, default: "E-mail address"},
+    FORMMESSAGE: {type: String, default: "Message"}
 
 });
 module.exports = mongoose.model('engtext', engtext);

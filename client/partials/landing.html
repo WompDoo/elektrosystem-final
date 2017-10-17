@@ -4,13 +4,13 @@
             <div class="col-md-5 landing--banner" ng-controller="scrollController">
                 <div ng-class="{'test': ctrl.language == 'et' || ctrl.language == 'en' ? '' : 'russianTextFix'}"
                      class="hero-text russianTextFix">
-                    <h1><!--{{oneArray.LANDINGTITLE1}}-->{{ 'LANDINGTITLE1' | translate }}</h1>
+                    <h1>{{oneArray.LANDINGTITLE1}}<!--{{ 'LANDINGTITLE1' | translate }}--></h1>
                     <div class="yellow">
-                        <p><!--{{oneArray.LANDINGMESSAGE}}-->{{ 'LANDINGMESSAGE' | translate }}</p>
+                        <p>{{oneArray.LANDINGMESSAGE}}<!--{{ 'LANDINGMESSAGE' | translate }}--></p>
                     </div>
-                    <h1><!--{{oneArray.LANDINGTITLE2}}-->{{ 'LANDINGTITLE2' | translate }}</h1>
+                    <h1>{{oneArray.LANDINGTITLE2}}<!--{{ 'LANDINGTITLE2' | translate }}--></h1>
                 </div>
-                <a scroll-to-bookmark="introduction" class="col-md-12">{{ 'LANDINGBUTTON2' | translate }} <i
+                <a scroll-to-bookmark="introduction" class="col-md-12">{{oneArray.LANDINGBUTTON2}}<!--{{ 'LANDINGBUTTON2' | translate }}--> <i
                         class="arrow right"></i></a>
 
                 <!--  <a>
@@ -37,7 +37,7 @@
 
                 </nav>
                 <div ng-controller="scrollController">
-                    <button class="request" scroll-to-bookmark="contact">{{ 'LANDINGBUTTON1' | translate }} <i
+                    <button class="request" scroll-to-bookmark="contact">{{oneArray.LANDINGBUTTON1}}<!--{{ 'LANDINGBUTTON1' | translate }}--> <i
                             class="arrow right"></i></button>
                 </div>
             </div>
@@ -94,8 +94,8 @@
     <div scroll-bookmark="introduction" class="introduction">
         <div id="introduction" class="col-md-5">
             <div class="intro-text">
-                <h1 class="col-md-12">{{ 'SIDEMENUINTRO' | translate }}</h1>
-                <p class="col-md-12 intro-paragraph"><!--{{oneArray.INTROTEXT}}-->{{ 'INTROTEXT' | translate }}</p>
+                <h1 class="col-md-12">{{oneArray.SIDEMENUINTRO}}<!--{{ 'SIDEMENUINTRO' | translate }}--></h1>
+                <p class="col-md-12 intro-paragraph">{{oneArray.INTROTEXT}}<!--{{ 'INTROTEXT' | translate }}--></p>
             </div>
         </div>
 
@@ -110,11 +110,11 @@
                     <div class="col-md-12 inspect i-pirn text-center">
                         <div class="col-md-12">
                             <h1>
-                                <!--{{oneArray.INTROSUBHEADING1}}-->{{ 'INTROSUBHEADING1' | translate }}
+                                {{oneArray.INTROSUBHEADING1}}<!--{{ 'INTROSUBHEADING1' | translate }}-->
                             </h1>
                         </div>
                         <div class="col-md-12">
-                            <p><!--{{oneArray.INTROSUBTEXT1}}-->{{ 'INTROSUBTEXT1' | translate }}</p>
+                            <p>{{oneArray.INTROSUBTEXT1}}<!--{{ 'INTROSUBTEXT1' | translate }}--></p>
                         </div>
                     </div>
                 </div>
@@ -126,11 +126,11 @@
                     <div class="col-md-12 inspect i-kilp">
                         <div class="col-md-12">
                             <h1>
-                                <!--{{oneArray.INTROSUBHEADING1}}-->{{ 'INTROSUBHEADING3' | translate }}
+                                {{oneArray.INTROSUBHEADING2}}<!--{{ 'INTROSUBHEADING3' | translate }}-->
                             </h1>
                         </div>
                         <div class="col-md-12 ">
-                            <p><!--{{oneArray.INTROSUBTEXT1}}-->{{ 'INTROSUBTEXT3' | translate }}</p>
+                            <p>{{oneArray.INTROSUBTEXT2}}<!--{{ 'INTROSUBTEXT3' | translate }}--></p>
                         </div>
                     </div>
                 </div>
@@ -144,11 +144,11 @@
                     <div class="col-md-12 inspect i-moodik">
                         <div class="col-md-12">
                             <h1>
-                                <!--{{oneArray.INTROSUBHEADING1}}-->{{ 'INTROSUBHEADING2' | translate }}
+                                {{oneArray.INTROSUBHEADING3}}<!--{{ 'INTROSUBHEADING2' | translate }}-->
                             </h1>
                         </div>
                         <div class="col-md-12 ">
-                            <p><!--{{oneArray.INTROSUBTEXT1}}-->{{ 'INTROSUBTEXT2' | translate }}</p>
+                            <p>{{oneArray.INTROSUBTEXT3}}<!--{{ 'INTROSUBTEXT2' | translate }}--></p>
                         </div>
                     </div>
                 </div>
@@ -160,11 +160,11 @@
                     <div class="col-md-12 inspect i-planeerija">
                         <div class="col-md-12">
                             <h1>
-                                <!--{{oneArray.INTROSUBHEADING1}}-->{{ 'INTROSUBHEADING4' | translate }}
+                                {{oneArray.INTROSUBHEADING4}}<!--{{ 'INTROSUBHEADING4' | translate }}-->
                             </h1>
                         </div>
                         <div class="col-md-12">
-                            <p><!--{{oneArray.INTROSUBTEXT1}}-->{{ 'INTROSUBTEXT4' | translate }}</p>
+                            <p>{{oneArray.INTROSUBTEXT4}}<!--{{ 'INTROSUBTEXT4' | translate }}--></p>
                         </div>
                     </div>
                 </div>
@@ -176,30 +176,30 @@
         <div class="col-md-12">
             <div class="team-info col-md-8">
                 <h1 class="col-md-12">
-                    {{ 'SIDEMENUCREW' | translate }}
+                    {{oneArray.SIDEMENUCREW}}<!--{{ 'SIDEMENUCREW' | translate }}-->
                 </h1>
                 <p class="col-md-12">
-                    <!--{{oneArray.CREWTEXT}}-->{{ 'CREWTEXT' | translate }}
+                    {{oneArray.CREWTEXT}}<!--{{ 'CREWTEXT' | translate }}-->
                 </p>
             </div>
             <div class="people col-md-4">
                 <div class="col-md-12 person">
-                    <h3 class="col-md-12"><!--{{oneArray.CREWNAME1}}-->Priit Laur</h3>
+                    <h3 class="col-md-12">{{oneArray.CREWNAME1}}<!--Priit Laur--></h3>
                     <img class="name-pics1" src="img/Char_grey.png">
-                    <p class="col-md-12"><!--{{oneArray.CREWPOS1}}-->{{ 'CREWPOS1' | translate }}</p>
-                    <p class="col-md-12"><!--<!&ndash;{{oneArray.CREWMAIL1}}&ndash;&gt;-->priit.laur@elektrosystem.ee</p>
+                    <p class="col-md-12">{{oneArray.CREWPOS1}}<!--{{ 'CREWPOS1' | translate }}--></p>
+                    <p class="col-md-12">{{oneArray.CREWMAIL1}}<!--priit.laur@elektrosystem.ee--></p>
                 </div>
                 <div class="col-md-12 person">
-                    <h3 class="col-md-12"><!--{{oneArray.CREWNAME2}}-->Marco Kruustük</h3>
+                    <h3 class="col-md-12">{{oneArray.CREWNAME2}}<!--Marco Kruustük--></h3>
                     <img class="name-pics" src="img/Char_fists.png">
-                    <p class="col-md-12"><!--{{oneArray.CREWPOS1}}-->{{ 'CREWPOS2' | translate }}</p>
-                    <p class="col-md-12"><!--{{oneArray.CREWMAIL1}}-->marco.kruustuk@elektrosystem.ee</p>
+                    <p class="col-md-12">{{oneArray.CREWPOS2}}<!--{{ 'CREWPOS2' | translate }}--></p>
+                    <p class="col-md-12">{{oneArray.CREWMAIL2}}<!--marco.kruustuk@elektrosystem.ee--></p>
                 </div>
                 <div class="col-md-12 person">
-                    <h3 class="col-md-12"><!--{{oneArray.CREWNAME3}}-->Sander Seene</h3>
+                    <h3 class="col-md-12">{{oneArray.CREWNAME3}}<!--Sander Seene--></h3>
                     <img class="name-pics2" src="img/dude.png">
-                    <p class="col-md-12"><!--{{oneArray.CREWPOS1}}-->{{ 'CREWPOS3' | translate }}</p>
-                    <p class="col-md-12"><!--{{oneArray.CREWMAIL1}}-->sander.seene@elektrosystem.ee</p>
+                    <p class="col-md-12">{{oneArray.CREWPOS3}}<!--{{ 'CREWPOS3' | translate }}--></p>
+                    <p class="col-md-12">{{oneArray.CREWMAIL3}}<!--sander.seene@elektrosystem.ee--></p>
                 </div>
             </div>
         </div>
@@ -297,7 +297,7 @@
             <div class="col-md-6 col-md-offset-2 gMap">
                 <a target="_tab" href="https://goo.gl/maps/fKEFDsCqwfK2">
                     <div class="mapLink text-center">
-                        <h4>{{ 'MAPEXTRA' | translate }}</h4>
+                        <h4>{{oneArray.MAPEXTRA}}<!--{{ 'MAPEXTRA' | translate }}--></h4>
                     </div>
                 </a>
                 <div ng-controller="mapCtrl" ng-init="initMap()">
@@ -307,10 +307,10 @@
                 </div>
             </div>
             <div class="info-box">
-                <h4>{{ 'CONTACTPHONE' | translate }}:<!--{{oneArray.PHONE}}-->+372 7366019</h4>
-                <h4>{{ 'CONTACTEMAIL' | translate }}: <!--{{oneArray.MAIL}}-->info@elektrosystem.ee
+                <h4><!--{{ 'CONTACTPHONE' | translate }}: -->{{oneArray.PHONE}}<!--+372 7366019--></h4>
+                <h4><!--{{ 'CONTACTEMAIL' | translate }}: -->{{oneArray.MAIL}}<!--info@elektrosystem.ee-->
                 </h4>
-                <h4>{{ 'CONTACTADDRESS' | translate }}: <!--{{oneArray.ADDRESS}}-->Tähe 127c, Tartu
+                <h4><!--{{ 'CONTACTADDRESS' | translate }}: -->{{oneArray.ADDRESS}}<!--Tähe 127c, Tartu-->
                 </h4>
 
             </div><!---->
@@ -320,19 +320,19 @@
         <div class="col-md-6 stuff">
             <div class="contact">
                 <div class="col-md-8 col-md-offset-1 small-heading">
-                    <h4>{{ 'CONTACTHEAD1' | translate }}</h4>
+                    <h4>{{oneArray.CONTACTHEAD1}}<!--{{ 'CONTACTHEAD1' | translate }}--></h4>
                 </div>
                 <div class="col-md-8 col-md-offset-1">
-                    <h2>{{ 'CONTACTHEAD2' | translate }}</h2>
+                    <h2>{{oneArray.CONTACTHEAD2}}<!--{{ 'CONTACTHEAD2' | translate }}--></h2>
                 </div>
 
                 <div class="col-md-4 contact-form">
                     <form>
-                        <input type="text" name="name" placeholder="{{ 'FORMNAME' | translate }}"/>
-                        <input type="email" name="e-mail" placeholder="{{ 'FORMEMAIL' | translate }}"/>
+                        <input type="text" name="name" placeholder="{{oneArray.FORMNAME}}"/>
+                        <input type="email" name="e-mail" placeholder="{{oneArray.FORMEMAIL}}"/>
                         <textarea class="col-xs-12" name="text" id="text" rows="3"
-                                  placeholder="{{ 'FORMMESSAGE' | translate }}"></textarea>
-                        <button class="btn-send col-xs-12">{{ 'LANDINGBUTTON1' | translate }}</button>
+                                  placeholder="{{oneArray.FORMMESSAGE}}"></textarea>
+                        <button class="btn-send col-xs-12">{{oneArray.LANDINGBUTTON1}}<!--{{ 'LANDINGBUTTON1' | translate }}--></button>
                     </form>
                 </div>
             </div>

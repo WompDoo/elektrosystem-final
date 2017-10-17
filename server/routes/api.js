@@ -24,7 +24,6 @@ var engText = require('../models/engtext.js');
 var rusText = require('../models/rustext.js');
 var project = require('../models/project.js');
 
-
 router.post('/email', function(req, res){
     console.log(req.body.email.$viewValue);
     if(req.body.lang === "et"){
@@ -116,6 +115,34 @@ router.post('/email', function(req, res){
         }
     });
 })
+
+// TODO: TMP
+
+router.post('/test/rustext', function (req, res) {
+    rusText.create({
+    }, function (err, project) {
+        if (err) res.send(err);
+        res.json(project);
+    })
+})
+
+router.post('/test/engtext', function (req, res) {
+    engText.create({
+    }, function (err, project) {
+        if (err) res.send(err);
+        res.json(project);
+    })
+})
+
+router.post('/test/esttext', function (req, res) {
+    estText.create({
+    }, function (err, project) {
+        if (err) res.send(err);
+        res.json(project);
+    })
+})
+
+// TODO: END
 
 router.post('/test/project', function (req, res) {
     project.create({
