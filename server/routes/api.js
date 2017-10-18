@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var multer = require('multer');
 var path = require('path');
+var Picture = require('../models/picture');
 
 
 var api_key = "insert key here";
@@ -477,6 +478,22 @@ router.get('/test/getfirstRus', function (req, res) {
         if (err) res.send(err);
         res.json(rustext);
     })
+})
+
+router.post('/product/picture', upload.single('file'), function(req, res){
+    console.log(req.file);
+    Picture.create({
+        picture: req.file.path
+    })
+    var str = req.file.path;
+
+    var correctPath = str.replace(/\/data02\/virt61426\/domeenid\/www.elektronet.ee\/elektrosystem-final\/client\//, '../');
+
+    // TODO: This should not be pushed into github
+    // correctPath = str.replace('/Users/jkniest/Documents/Development/webstate/elektrosystem-final/client/', '../');
+    // TODO: End
+
+    res.json(correctPath);
 })
 
 

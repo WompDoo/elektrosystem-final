@@ -43,7 +43,8 @@ var myApp = angular.module('myApp', [
     'mailCtrl',
     'emailService',
     'projectService',
-    'editProjectCtrl'
+    'editProjectCtrl',
+    'ngDraggable'
 ]);
 
 

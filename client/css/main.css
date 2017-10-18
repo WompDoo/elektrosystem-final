@@ -2146,3 +2146,78 @@ and (orientation : landscape) {
 }
 
 
+/* IMAGE UPLOAD / IMAGE VIEW */
+.image-holder-back{
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    position: relative;
+}
+.admin-pic-list{
+    list-style: none;
+    margin-left: -25px;
+    margin-top: 25px;
+}
+.admin-pic-list > li{
+    float:left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.close-img {
+    width: 20px;
+    height: 20px;
+    background-color: #424242;
+    border-radius: 50%;
+    opacity: 1;
+
+    position: absolute;
+    right: -8px;
+    top: -8px;
+}
+
+.close-img:after {
+    content: 'x';
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+    left: 8px;
+    color: white;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    margin-top: 30px;
+    font-family: Hel-Bold;
+    padding-top: 10px;
+    padding-bottom: 9px;
+    padding-left: 27px;
+    padding-right: 27px;
+    max-width: 80%;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid #cccccc;
+    color: #cccccc;
+    margin-left: 15px;
+
+}
+
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}

@@ -2,84 +2,99 @@
     <h1>Muuda projekte</h1>
     <hr>
 
-    <div class="col-md-6">
-        <div class="image-upload"></div>
-    </div>
-    <div class="col-md-6" ng-controller="editProjectCtrl">
-        <div class="lang-nav admin-lang-nav text-center">
-            <button ng-click="lang('et')">Et</button>
-            <button ng-click="lang('en')">En</button>
-            <button ng-click="lang('ru')">Ru</button>
+    <div class="row" ng-controller="editProjectCtrl">
+        <div class="col-md-6">
+            <!--<div class="image-upload"></div> -->
+            <div class="row" style=" height: 223px;">
+                <ul class="admin-pic-list">
+                    <li ng-repeat="item in project.pictures track by $index" class="image-holder-back" style="background-image:url({{item}})" ng-drop="true" ng-drop-success="onDropComplete($index, $data,$event)" ng-drag="true" ng-drag-data="item">
+                        <span class="close-img" ng-click="deleteImage(item)"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="input-field-container">
+                    <input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1" onchange="angular.element(this).scope().filesChanged(this)" multiple/>
+                    <label for="file-1"><span>UPLOAD PICTURES</span></label>
+                </div>
+            </div>
         </div>
-        <form>
-            <div ng-if="language == 'et'">
-                Projekti nimi:
-                <br>
-                <!--<input type="text" name="project_name" />-->
-                <input type="text" value="project.name_ee" ng-model="project.name_ee" ng-blur="updateFieldContent('name_ee', project.name_ee)">
-                <br>
-                Kategooria:
-                <br>
-                <input type="text" value="project.subtitle_ee" ng-model="project.subtitle_ee" ng-blur="updateFieldContent('subtitle_ee', project.subtitle_ee)">
-                <br>
-                Aasta:
-                <br>
-                <input type="text" value="project.years_ee" ng-model="project.years_ee" ng-blur="updateFieldContent('years_ee', project.years_ee)">
-                <br>
-                Projekti selgitus:
-                <br>
-                <textarea rows="4" cols="50" ng-model="project.description_ee" ng-blur="updateFieldContent('description_ee', project.description_ee)"></textarea>
-                <br>
-                Lühiinfo mobiilivaate jaoks:
-                <br>
-                <textarea rows="4" cols="50" ng-model="project.shortinfo_ee" ng-blur="updateFieldContent('shortinfo_ee', project.shortinfo_ee)"></textarea>
+        <div class="col-md-6">
+            <div class="lang-nav admin-lang-nav text-center">
+                <button ng-click="lang('et')">Et</button>
+                <button ng-click="lang('en')">En</button>
+                <button ng-click="lang('ru')">Ru</button>
             </div>
+            <form>
+                <div ng-if="language == 'et'">
+                    Projekti nimi:
+                    <br>
+                    <!--<input type="text" name="project_name" />-->
+                    <input type="text" value="project.name_ee" ng-model="project.name_ee" ng-blur="updateFieldContent('name_ee', project.name_ee)">
+                    <br>
+                    Kategooria:
+                    <br>
+                    <input type="text" value="project.subtitle_ee" ng-model="project.subtitle_ee" ng-blur="updateFieldContent('subtitle_ee', project.subtitle_ee)">
+                    <br>
+                    Aasta:
+                    <br>
+                    <input type="text" value="project.years_ee" ng-model="project.years_ee" ng-blur="updateFieldContent('years_ee', project.years_ee)">
+                    <br>
+                    Projekti selgitus:
+                    <br>
+                    <textarea rows="4" cols="50" ng-model="project.description_ee" ng-blur="updateFieldContent('description_ee', project.description_ee)"></textarea>
+                    <br>
+                    Lühiinfo mobiilivaate jaoks:
+                    <br>
+                    <textarea rows="4" cols="50" ng-model="project.shortinfo_ee" ng-blur="updateFieldContent('shortinfo_ee', project.shortinfo_ee)"></textarea>
+                </div>
 
-            <div ng-if="language == 'en'">
-                Projekti nimi:
-                <br>
-                <!--<input type="text" name="project_name" />-->
-                <input type="text" value="project.name_en" ng-model="project.name_en" ng-blur="updateFieldContent('name_en', project.name_en)">
-                <br>
-                Kategooria:
-                <br>
-                <input type="text" value="project.subtitle_en" ng-model="project.subtitle_en" ng-blur="updateFieldContent('subtitle_en', project.subtitle_en)">
-                <br>
-                Aasta:
-                <br>
-                <input type="text" value="project.years_en" ng-model="project.years_en" ng-blur="updateFieldContent('years_en', project.years_en)">
-                <br>
-                Projekti selgitus:
-                <br>
-                <textarea rows="4" cols="50" ng-model="project.description_en" ng-blur="updateFieldContent('description_en', project.description_en)"></textarea>
-                <br>
-                Lühiinfo mobiilivaate jaoks:
-                <br>
-                <textarea rows="4" cols="50" ng-model="project.shortinfo_en" ng-blur="updateFieldContent('shortinfo_en', project.shortinfo_en)"></textarea>
-            </div>
+                <div ng-if="language == 'en'">
+                    Projekti nimi:
+                    <br>
+                    <!--<input type="text" name="project_name" />-->
+                    <input type="text" value="project.name_en" ng-model="project.name_en" ng-blur="updateFieldContent('name_en', project.name_en)">
+                    <br>
+                    Kategooria:
+                    <br>
+                    <input type="text" value="project.subtitle_en" ng-model="project.subtitle_en" ng-blur="updateFieldContent('subtitle_en', project.subtitle_en)">
+                    <br>
+                    Aasta:
+                    <br>
+                    <input type="text" value="project.years_en" ng-model="project.years_en" ng-blur="updateFieldContent('years_en', project.years_en)">
+                    <br>
+                    Projekti selgitus:
+                    <br>
+                    <textarea rows="4" cols="50" ng-model="project.description_en" ng-blur="updateFieldContent('description_en', project.description_en)"></textarea>
+                    <br>
+                    Lühiinfo mobiilivaate jaoks:
+                    <br>
+                    <textarea rows="4" cols="50" ng-model="project.shortinfo_en" ng-blur="updateFieldContent('shortinfo_en', project.shortinfo_en)"></textarea>
+                </div>
 
-            <div ng-if="language == 'ru'">
-                Projekti nimi:
-                <br>
-                <!--<input type="text" name="project_name" />-->
-                <input type="text" value="project.name_ru" ng-model="project.name_ru" ng-blur="updateFieldContent('name_ru', project.name_ru)">
-                <br>
-                Kategooria:
-                <br>
-                <input type="text" value="project.subtitle_ru" ng-model="project.subtitle_ru" ng-blur="updateFieldContent('subtitle_ru', project.subtitle_ru)">
-                <br>
-                Aasta:
-                <br>
-                <input type="text" value="project.years_ru" ng-model="project.years_ru" ng-blur="updateFieldContent('years_ru', project.years_ru)">
-                <br>
-                Projekti selgitus:
-                <br>
-                <textarea rows="4" cols="50" ng-model="project.description_ru" ng-blur="updateFieldContent('description_ru', project.description_ru)"></textarea>
-                <br>
-                Lühiinfo mobiilivaate jaoks:
-                <br>
-                <textarea rows="4" cols="50" ng-model="project.shortinfo_ru" ng-blur="updateFieldContent('shortinfo_ru', project.shortinfo_ru)"></textarea>
-            </div>
-        </form>
+                <div ng-if="language == 'ru'">
+                    Projekti nimi:
+                    <br>
+                    <!--<input type="text" name="project_name" />-->
+                    <input type="text" value="project.name_ru" ng-model="project.name_ru" ng-blur="updateFieldContent('name_ru', project.name_ru)">
+                    <br>
+                    Kategooria:
+                    <br>
+                    <input type="text" value="project.subtitle_ru" ng-model="project.subtitle_ru" ng-blur="updateFieldContent('subtitle_ru', project.subtitle_ru)">
+                    <br>
+                    Aasta:
+                    <br>
+                    <input type="text" value="project.years_ru" ng-model="project.years_ru" ng-blur="updateFieldContent('years_ru', project.years_ru)">
+                    <br>
+                    Projekti selgitus:
+                    <br>
+                    <textarea rows="4" cols="50" ng-model="project.description_ru" ng-blur="updateFieldContent('description_ru', project.description_ru)"></textarea>
+                    <br>
+                    Lühiinfo mobiilivaate jaoks:
+                    <br>
+                    <textarea rows="4" cols="50" ng-model="project.shortinfo_ru" ng-blur="updateFieldContent('shortinfo_ru', project.shortinfo_ru)"></textarea>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
