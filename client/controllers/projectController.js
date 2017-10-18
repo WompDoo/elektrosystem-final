@@ -1,5 +1,5 @@
 var projectController = angular.module('projectController', ['ui.bootstrap']);
-projectController.controller('projectController', function projectController($scope, $rootScope, $timeout) {
+projectController.controller('projectController', function projectController($scope, $rootScope, $timeout, projectService) {
 
     $scope.nextButtonHidden = false;
     $scope.prevButtonHidden = true;
@@ -254,6 +254,12 @@ projectController.controller('projectController', function projectController($sc
 
     ];
 
+    projectService.getProjects().then(function (data) {
+        $scope.project = data;
+    })
+
+
+
 
     $rootScope.$watch('language', function () {
 
@@ -272,12 +278,12 @@ projectController.controller('projectController', function projectController($sc
             //$scope.projectName = $scope.project[index].ee.name;
         }
         else if ($rootScope.language == "en") {
-            for (i = 0; i < $scope.project.length; i++) {
+            /*for (i = 0; i < $scope.project.length; i++) {
                 $scope.projectNameList.push($scope.project[i].en.name);
                 $scope.projectSubList.push($scope.project[i].en.alapealkiri);
                 $scope.projectYearList.push($scope.project[i].en.aasta);
                 $scope.projectShortList.push($scope.project[i].en.shortinfo);
-            }
+            }*/
             //$scope.projectName = $scope.project.en.name;
         }
         else {
@@ -298,30 +304,28 @@ projectController.controller('projectController', function projectController($sc
 
         $rootScope.projectview = true;
         $rootScope.projectViewOverlay = true;
-        $scope.globalPictures = $scope.projects[index].pictures;
-        $scope.globalAasta = $scope.projects[index].aasta;
+        $scope.globalPictures = $scope.project[index].pictures;
         $rootScope.index = index;
 
 
         $scope.$watch('$rootScope.language', function () {
             if ($rootScope.language == "et") {
-                $scope.globalName = $scope.project[index].ee.name;
-                $scope.globalAlapealkiri = $scope.project[index].ee.alapealkiri;
-                $scope.globalTekst = $scope.project[index].ee.tekst;
-                $scope.globalPictures = $scope.project[index].ee.pictures;
-                $scope.globalAasta = $scope.project[index].ee.aasta;
+                $scope.globalName = $scope.project[index].name_ee;
+                $scope.globalAlapealkiri = $scope.project[index].subtitle_ee;
+                $scope.globalTekst = $scope.project[index].description_ee;
+                $scope.globalAasta = $scope.project[index].shortinfo_ee;
             }
             else if ($rootScope.language == "en") {
-                console.log('engli');
-                $scope.globalName = $scope.project[index].en.name;
-                $scope.globalAlapealkiri = $scope.project[index].en.alapealkiri;
-                $scope.globalTekst = $scope.project[index].en.tekst;
+                $scope.globalName = $scope.project[index].name_en;
+                $scope.globalAlapealkiri = $scope.project[index].subtitle_en;
+                $scope.globalTekst = $scope.project[index].description_en;
+                $scope.globalAasta = $scope.project[index].shortinfo_en;
             }
             else {
-                console.log('rusi');
-                $scope.globalName = $scope.project[index].ru.name;
-                $scope.globalAlapealkiri = $scope.project[index].ru.alapealkiri;
-                $scope.globalTekst = $scope.project[index].ru.tekst;
+                $scope.globalName = $scope.project[index].name_ru;
+                $scope.globalAlapealkiri = $scope.project[index].subtitle_ru;
+                $scope.globalTekst = $scope.project[index].description_ru;
+                $scope.globalAasta = $scope.project[index].shortinfo_ru;
             }
         });
 
@@ -353,7 +357,7 @@ projectController.controller('projectController', function projectController($sc
     }
 
     $scope.next = function(){
-        var length = $scope.project[$scope.index].ee.pictures.length;
+        var length = $scope.project[$scope.index].pictures.length;
         $scope.toLeft = true;
         $scope.toRight = false;
         $scope.prevButtonHidden = false;
@@ -368,58 +372,77 @@ projectController.controller('projectController', function projectController($sc
     $scope.menuUp = function(){
 
         $scope.index--;
-        var length = $scope.project[$scope.index].ee.pictures.length;
+        if($scope.index < 0){
+            $scope.index = $scope.project.length - 1;
+        }
+
+        var length = $scope.project[$scope.index].pictures.length;
 
         $scope.displayCard = 0;
         $scope.prevButtonHidden = true;
         $scope.nextButtonHidden = length === 1;
 
-        if($scope.index === 0){
-            $scope.index = length-1;
+        index = $scope.index;
+
+        $scope.globalPictures = $scope.project[index].pictures;
+
+        if ($rootScope.language == "et") {
+            $scope.globalName = $scope.project[index].name_ee;
+            $scope.globalAlapealkiri = $scope.project[index].subtitle_ee;
+            $scope.globalTekst = $scope.project[index].description_ee;
+            $scope.globalAasta = $scope.project[index].shortinfo_ee;
         }
-        if($rootScope.language === 'et'){
-            $rootScope.holder = $scope.project[$scope.index].ee;
+        else if ($rootScope.language == "en") {
+            $scope.globalName = $scope.project[index].name_en;
+            $scope.globalAlapealkiri = $scope.project[index].subtitle_en;
+            $scope.globalTekst = $scope.project[index].description_en;
+            $scope.globalAasta = $scope.project[index].shortinfo_en;
         }
-        if($rootScope.language === 'en'){
-            $rootScope.holder = $scope.project[$scope.index].en;
+        else {
+            $scope.globalName = $scope.project[index].name_ru;
+            $scope.globalAlapealkiri = $scope.project[index].subtitle_ru;
+            $scope.globalTekst = $scope.project[index].description_ru;
+            $scope.globalAasta = $scope.project[index].shortinfo_ru;
         }
-        if($rootScope.language === 'ru'){
-            $rootScope.holder = $scope.project[$scope.index].ru;
-        }
-        $scope.globalName = $rootScope.holder.name;
-        $scope.globalAlapealkiri = $rootScope.holder.alapealkiri;
-        $scope.globalAasta = $rootScope.holder.aasta;
-        $scope.globalTekst = $rootScope.holder.tekst;
-        $scope.globalPictures = $rootScope.holder.pictures;
     }
     $scope.menuDown = function () {
 
         console.log($scope.index);
         $scope.index++;
-        var length = $scope.project[$scope.index].ee.pictures.length;
+
+        if($scope.index > $scope.project.length-1){
+            $scope.index = 0;
+        }
+
+        var length = $scope.project[$scope.index].pictures.length;
 
         $scope.displayCard = 0;
         $scope.prevButtonHidden = true;
         $scope.nextButtonHidden = length === 1;
 
-        if($scope.index === length-1){
-            $scope.index = 0;
+
+        index = $scope.index;
+
+        $scope.globalPictures = $scope.project[index].pictures;
+
+        if ($rootScope.language == "et") {
+            $scope.globalName = $scope.project[index].name_ee;
+            $scope.globalAlapealkiri = $scope.project[index].subtitle_ee;
+            $scope.globalTekst = $scope.project[index].description_ee;
+            $scope.globalAasta = $scope.project[index].shortinfo_ee;
         }
-        if($rootScope.language === 'et'){
-            $rootScope.holder = $scope.project[$scope.index].ee;
+        else if ($rootScope.language == "en") {
+            $scope.globalName = $scope.project[index].name_en;
+            $scope.globalAlapealkiri = $scope.project[index].subtitle_en;
+            $scope.globalTekst = $scope.project[index].description_en;
+            $scope.globalAasta = $scope.project[index].shortinfo_en;
         }
-        if($rootScope.language === 'en'){
-            $rootScope.holder = $scope.project[$scope.index].en;
+        else {
+            $scope.globalName = $scope.project[index].name_ru;
+            $scope.globalAlapealkiri = $scope.project[index].subtitle_ru;
+            $scope.globalTekst = $scope.project[index].description_ru;
+            $scope.globalAasta = $scope.project[index].shortinfo_ru;
         }
-        if($rootScope.language === 'ru'){
-            $rootScope.holder = $scope.project[$scope.index].ru;
-        }
-        $rootScope.projectview = true;
-        $scope.globalName = $rootScope.holder.name;
-        $scope.globalAlapealkiri = $rootScope.holder.alapealkiri;
-        $scope.globalAasta = $rootScope.holder.aasta;
-        $scope.globalTekst = $rootScope.holder.tekst;
-        $scope.globalPictures = $rootScope.holder.pictures;
 
     }
 

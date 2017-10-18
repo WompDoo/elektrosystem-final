@@ -1,33 +1,85 @@
-<div class="container" ng-controller="demoCtrl">
+<div class="container" ng-controller="mingiAsiCtrl">
     <h1>Modify project</h1>
     <hr>
 
     <div class="col-md-6">
         <div class="image-upload"></div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" ng-controller="editProjectCtrl">
         <div class="lang-nav admin-lang-nav text-center">
             <button ng-click="lang('et')">Et</button>
             <button ng-click="lang('en')">En</button>
             <button ng-click="lang('ru')">Ru</button>
         </div>
         <form>
-            Project name:
-            <br>
-            <!--<input type="text" name="project_name" />-->
-            <input type="text" value="projectArray[$index].name" ng-model="projectArray[$index].name" ng-blur="updateFieldContent('name', projectArray.name)">
-            <br>
-            Project category:
-            <br>
-            <input type="text" name="project_category" placeholder="ex. Toidupoed"/>
-            <br>
-            Project years:
-            <br>
-            <input type="text" name="project_years" placeholder="ex. 2011-2012"/>
-            <br>
-            Project description:
-            <br>
-            <textarea rows="4" cols="50" name="projcet_description" placeholder="ex. Loodud erinevatel põhjustel..."></textarea>
+            <div ng-if="language == 'et'">
+                Project name:
+                <br>
+                <!--<input type="text" name="project_name" />-->
+                <input type="text" value="project.name_ee" ng-model="project.name_ee" ng-blur="updateFieldContent('name_ee', project.name_ee)">
+                <br>
+                Project category:
+                <br>
+                <input type="text" value="project.subtitle_ee" ng-model="project.subtitle_ee" ng-blur="updateFieldContent('subtitle_ee', project.subtitle_ee)">
+                <br>
+                Project years:
+                <br>
+                <input type="text" value="project.years_ee" ng-model="project.years_ee" ng-blur="updateFieldContent('years_ee', project.years_ee)">
+                <br>
+                Project description:
+                <br>
+                <textarea rows="4" cols="50" ng-model="project.description_ee" ng-blur="updateFieldContent('description_ee', project.description_ee)"></textarea>
+                <br>
+                Project short info:
+                <br>
+                <textarea rows="4" cols="50" ng-model="project.shortinfo_ee" ng-blur="updateFieldContent('shortinfo_ee', project.shortinfo_ee)"></textarea>
+            </div>
+
+            <div ng-if="language == 'en'">
+                Project name:
+                <br>
+                <!--<input type="text" name="project_name" />-->
+                <input type="text" value="project.name_en" ng-model="project.name_en" ng-blur="updateFieldContent('name_en', project.name_en)">
+                <br>
+                Project category:
+                <br>
+                <input type="text" value="project.subtitle_en" ng-model="project.subtitle_en" ng-blur="updateFieldContent('subtitle_en', project.subtitle_en)">
+                <br>
+                Project years:
+                <br>
+                <input type="text" value="project.years_en" ng-model="project.years_en" ng-blur="updateFieldContent('years_en', project.years_en)">
+                <br>
+                Project description:
+                <br>
+                <textarea rows="4" cols="50" ng-model="project.description_en" ng-blur="updateFieldContent('description_en', project.description_en)"></textarea>
+                <br>
+                Project short info:
+                <br>
+                <textarea rows="4" cols="50" ng-model="project.shortinfo_en" ng-blur="updateFieldContent('shortinfo_en', project.shortinfo_en)"></textarea>
+            </div>
+
+            <div ng-if="language == 'ru'">
+                Project name:
+                <br>
+                <!--<input type="text" name="project_name" />-->
+                <input type="text" value="project.name_ru" ng-model="project.name_ru" ng-blur="updateFieldContent('name_ru', project.name_ru)">
+                <br>
+                Project category:
+                <br>
+                <input type="text" value="project.subtitle_ru" ng-model="project.subtitle_ru" ng-blur="updateFieldContent('subtitle_ru', project.subtitle_ru)">
+                <br>
+                Project years:
+                <br>
+                <input type="text" value="project.years_ru" ng-model="project.years_ru" ng-blur="updateFieldContent('years_ru', project.years_ru)">
+                <br>
+                Project description:
+                <br>
+                <textarea rows="4" cols="50" ng-model="project.description_ru" ng-blur="updateFieldContent('description_ru', project.description_ru)"></textarea>
+                <br>
+                Project short info:
+                <br>
+                <textarea rows="4" cols="50" ng-model="project.shortinfo_ru" ng-blur="updateFieldContent('shortinfo_ru', project.shortinfo_ru)"></textarea>
+            </div>
         </form>
     </div>
 </div>

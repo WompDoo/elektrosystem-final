@@ -41,8 +41,9 @@ var myApp = angular.module('myApp', [
     'tweetbutton',
     'dataService',
     'mailCtrl',
-    'emailService'
-
+    'emailService',
+    'projectService',
+    'editProjectCtrl'
 ]);
 
 

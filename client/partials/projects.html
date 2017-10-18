@@ -11,12 +11,12 @@
             </tr>
             </thead>
             <tbody ng-controller="projectController">
-                <tr ng-repeat="project in projectArray track by $index">
+                <tr ng-repeat="project in project track by $index">
                     <td>
-                        <p>{{project.name}}</p>
+                        <p>{{project.name_ee}}</p>
                     </td>
                     <td align="center">
-                        <a ui-sref="admin.project({ projectID: $index})" ><em class="glyphicon glyphicon-pencil"></em></a>
+                        <a ui-sref="admin.project({ projectID: project._id})" ><em class="glyphicon glyphicon-pencil"></em></a>
                     </td>
                 </tr>
             </tbody>

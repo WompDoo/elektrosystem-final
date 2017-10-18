@@ -208,15 +208,19 @@
         <div ng-controller="projectController">
 
             <div class="gallery cf">
-                <div class="image-holder" ng-repeat="project in projects">
+                <div class="image-holder" ng-repeat="project in project">
                     <img ng-src="{{project.image}}"/>
-                    <h1 class="project-heading col-md-8 col-md-offset-2">{{projectNameList[$index]}}</h1>
+                    <h1 class="project-heading col-md-8 col-md-offset-2">
+                        <span ng-if="language == 'et'">{{project.name_ee}}</span>
+                        <span ng-if="language == 'en'">{{project.name_en}}</span>
+                        <span ng-if="language == 'ru'">{{project.name_ru}}</span>
+                    </h1>
                     <button class="project-info col-md-6 col-md-offset-3" ng-click="toggleProjectView($index)">{{
                         'PROJECTSINSPECT' | translate }}
                     </button>
                 </div>
             </div>
-            <div ng-repeat="project in projects" class="projectView {{project.name}}"
+            <div ng-repeat="project in project" class="projectView {{project.name}}"
                  ng-show="projectview">
                 <a class="close closeProject" ng-click="hideProject()"></a>
                 <!--<button ng-click="prev()">Previous</button>
