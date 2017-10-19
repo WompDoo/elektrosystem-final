@@ -61,22 +61,22 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             abstract: true,
             url: '/admin',
             templateUrl: 'partials/admin.html',
-            access: {restricted: false}
+            access: {restricted: true}
         })
         .state('admin.dashboard', {
             url: '/dashboard',
             templateUrl: 'partials/dashboard.html',
-            access: {restricted: false}
+            access: {restricted: true}
         })
         .state('admin.projects', {
             url: '/projects',
             templateUrl: 'partials/projects.html',
-            access: {restricted: false}
+            access: {restricted: true}
         })
         .state('admin.project', {
             url: '/project/:projectID',
             templateUrl: 'partials/project.html',
-            access: {restricted: false}
+            access: {restricted: true}
         })
         .state('admin.demo', {
             url: '/demo',

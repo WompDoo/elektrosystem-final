@@ -4,6 +4,7 @@ var passport = require('passport');
 var multer = require('multer');
 var path = require('path');
 var Picture = require('../models/picture');
+var User = require('../models/user');
 
 
 var api_key = "insert key here";
@@ -118,6 +119,22 @@ router.post('/email', function(req, res){
 })
 
 // TODO: TMP
+
+router.post('/user/register', function(req, res) {
+    User.register(new User({ username: req.body.username }),
+        req.body.password, function(err, account) {
+            if (err) {
+                return res.status(500).json({
+                    err: err
+                });
+            }
+            passport.authenticate('local')(req, res, function () {
+                return res.status(200).json({
+                    status: 'Registration successful!'
+                });
+            });
+        });
+});
 
 router.post('/test/rustext', function (req, res) {
     rusText.create({
@@ -495,6 +512,47 @@ router.post('/product/picture', upload.single('file'), function(req, res){
 
     res.json(correctPath);
 })
+
+router.post('/user/login', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        if (err) {
+            return next(err);
+        }
+        if (!user) {
+            return res.status(401).json({
+                err: info
+            });
+        }
+        req.logIn(user, function(err) {
+            if (err) {
+                return res.status(500).json({
+                    err: 'Could not log in user'
+                });
+            }
+            res.status(200).json({
+                status: 'Login successful!'
+            });
+        });
+    })(req, res, next);
+});
+
+router.get('/user/logout', function(req, res) {
+    req.logout();
+    res.status(200).json({
+        status: 'Bye!'
+    });
+});
+
+router.get('/user/status', function(req, res) {
+    if (!req.isAuthenticated()) {
+        return res.status(200).json({
+            status: false
+        });
+    }
+    res.status(200).json({
+        status: true
+    });
+});
 
 
 module.exports = router;
