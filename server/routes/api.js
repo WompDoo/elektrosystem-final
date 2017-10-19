@@ -82,7 +82,7 @@ router.post('/email', function(req, res){
     }
     var feedbackToOwner = {
         from: "Elektrosystem<info@elektrosystem.ee>",
-        to: "oskarmartinco@gmail.com, wpihor@gmail.com, mail@jkniest.de",
+        to: "wpihor@gmail.com, info@elektrosystem.ee, priit@elektrosystem.ee",
         subject: "Tagasiside liides lehelt",
         html: '<!DOCTYPE html> \
                 <html>\
