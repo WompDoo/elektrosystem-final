@@ -7,7 +7,7 @@ var Picture = require('../models/picture');
 var User = require('../models/user');
 
 
-var api_key = "insert key here";
+var api_key = "key-99008ae76504df2a720c17c9735ad0fa";
 var domain = "elektrosystem.ee";
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
@@ -27,11 +27,11 @@ var rusText = require('../models/rustext.js');
 var project = require('../models/project.js');
 
 router.post('/email', function(req, res){
-    console.log(req.body.email.$viewValue);
+    console.log(req.body.email);
     if(req.body.lang === "et"){
             var feedbackToCustomer = {
                 from: "Elektrosystem<info@elektrosystem.ee>",
-                to:  req.body.email.$viewValue,
+                to:  req.body.email,
                 subject: "Teie küsimus jõudis meieni!",
                 html: '<!DOCTYPE html> \
                         <html>\
@@ -42,10 +42,10 @@ router.post('/email', function(req, res){
                         </head>\
                         <body style="margin: 0; padding: 0;">\
                           <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="border:none;">\
-                               <tr><td style="color:#500050; font-size:24px;">Aitäh, '+req.body.name.$viewValue+'</td></tr>\
+                               <tr><td style="color:#500050; font-size:24px;">Aitäh, '+req.body.name+'</td></tr>\
                                <tr><td style="color:#500050; font-size:24px;padding-top: 50px; padding-bottom: 20px;">Teie küsimus on jõudnud meieni!</td></tr>\
-                               <tr><td><b>Emaili aadress: </b> '+req.body.email.$viewValue +'</td></tr>\
-                               <tr><td><b>Sõnumi sisu: </b> '+req.body.text.$viewValue +'</td></tr>\
+                               <tr><td><b>Emaili aadress: </b> '+req.body.email +'</td></tr>\
+                               <tr><td><b>Sõnumi sisu: </b> '+req.body.text +'</td></tr>\
                                <tr><td style="color:#500050; font-size:24px;padding-top:20px;padding-bottom: 50px;">Vastame Teile esimesel võimalusel.</td></tr>\
                                <tr><td style="color:#500050; font-size:24px;">Ilusat päeva soovides</td></tr>\
                                <tr><td style="color:#500050; font-size:24px;">Elektrosystem</td></tr>\
@@ -57,7 +57,7 @@ router.post('/email', function(req, res){
     else{
         var feedbackToCustomer = {
             from: "Elektrosystem<info@elektrosystem.ee>",
-            to: req.body.email.$viewValue,
+            to: req.body.email,
             subject: "Your question has reached us!",
             html: '<!DOCTYPE html> \
                     <html>\
@@ -68,10 +68,10 @@ router.post('/email', function(req, res){
                     </head>\
                     <body style="margin: 0; padding: 0;">\
                       <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="border:none;">\
-                           <tr><td style="color:#500050; font-size:24px;">Hello '+req.body.name.$viewValue +'</td></tr>\
+                           <tr><td style="color:#500050; font-size:24px;">Hello '+req.body.name +'</td></tr>\
                            <tr><td style="color:#500050; font-size:24px;padding-top: 50px; padding-bottom: 20px;">We have received your question!</td></tr>\
-                           <tr><td><b>Email address: </b> '+req.body.email.$viewValue +'</td></tr>\
-                           <tr><td><b>Message: </b> '+req.body.text.$viewValue +'</td></tr>\
+                           <tr><td><b>Email address: </b> '+req.body.email +'</td></tr>\
+                           <tr><td><b>Message: </b> '+req.body.text +'</td></tr>\
                            <tr><td style="color:#500050; font-size:24px;padding-top:20px;padding-bottom: 50px;">We will answer you as soon as possible.</td></tr>\
                            <tr><td style="color:#500050; font-size:24px;">Have a very nice day,</td></tr>\
                            <tr><td style="color:#500050; font-size:24px;">Elektrosystem</td></tr>\
@@ -82,7 +82,7 @@ router.post('/email', function(req, res){
     }
     var feedbackToOwner = {
         from: "Elektrosystem<info@elektrosystem.ee>",
-        to: "oskarmartinco@gmail.com",
+        to: "oskarmartinco@gmail.com, wpihor@gmail.com, mail@jkniest.de",
         subject: "Tagasiside liides lehelt",
         html: '<!DOCTYPE html> \
                 <html>\
@@ -94,9 +94,9 @@ router.post('/email', function(req, res){
                 <body style="margin: 0; padding: 0;">\
                   <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="border:none;">\
                        <tr><td style="color:#500050; font-size:24px;">Lisandunud on tagasiside lehelt</td></tr>\
-                       <tr><td><b>Nimi: </b> '+req.body.name.$viewValue +'</td></tr>\
-                       <tr><td><b>Meili aadress: </b> '+req.body.email.$viewValue +'</td></tr>\
-                       <tr><td><b>Sõnum: </b> '+req.body.text.$viewValue +'</td></tr>\
+                       <tr><td><b>Nimi: </b> '+req.body.name +'</td></tr>\
+                       <tr><td><b>Meili aadress: </b> '+req.body.email +'</td></tr>\
+                       <tr><td><b>Sõnum: </b> '+req.body.text +'</td></tr>\
                   </table>\
                 </body>\
                 </html>'

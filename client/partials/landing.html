@@ -261,7 +261,7 @@
                     <div class="project-text">
                         <h1 class="col-md-6 col-md-offset-4">{{globalName}}</h1>
                         <h5 class="col-md-6 col-md-offset-4">{{globalAlapealkiri}}</h5>
-                        <h3 class="col-md-6 col-md-offset-4">{{globalAasta}}</h3>
+                        <h3 class="visible-xs col-md-6 col-md-offset-4">{{globalAasta}}</h3>
                         <p class="col-md-6 col-md-offset-4">{{globalTekst}} </p>
                         <hr class="col-md-6 col-md-offset-4">
                         <button scroll-to-bookmark="contact" ng-click="hideProject()"
@@ -330,13 +330,13 @@
                     <h2>{{oneArray.CONTACTHEAD2}}<!--{{ 'CONTACTHEAD2' | translate }}--></h2>
                 </div>
 
-                <div class="col-md-4 contact-form">
+                <div class="col-md-4 contact-form" ng-controller="landingContactCtrl">
                     <form>
-                        <input type="text" name="name" placeholder="{{oneArray.FORMNAME}}"/>
-                        <input type="email" name="e-mail" placeholder="{{oneArray.FORMEMAIL}}"/>
+                        <input type="text" name="name" ng-model="sendEmailForm.name" placeholder="{{oneArray.FORMNAME}}"/>
+                        <input type="email" name="e-mail" ng-model="sendEmailForm.email" placeholder="{{oneArray.FORMEMAIL}}"/>
                         <textarea class="col-xs-12" name="text" id="text" rows="3"
-                                  placeholder="{{oneArray.FORMMESSAGE}}"></textarea>
-                        <button class="btn-send col-xs-12">{{oneArray.LANDINGBUTTON1}}<!--{{ 'LANDINGBUTTON1' | translate }}--></button>
+                                  placeholder="{{oneArray.FORMMESSAGE}}" ng-model="sendEmailForm.text"></textarea>
+                        <button ng-click="send()" class="btn-send col-xs-12">{{oneArray.LANDINGBUTTON1}}<!--{{ 'LANDINGBUTTON1' | translate }}--></button>
                     </form>
                 </div>
             </div>
