@@ -12,7 +12,7 @@ angular.module('myApp').controller('loginController',
       AuthService.login($scope.loginForm.username, $scope.loginForm.password)
         // handle success
         .then(function () {
-          $location.path('/admin/products');
+          $location.path('admin/dashboard');
           $scope.disabled = false;
           $scope.loginForm = {};
         })
