@@ -49,7 +49,11 @@ var myApp = angular.module('myApp', [
 
 
 
-myApp.config(function ($stateProvider, $urlRouterProvider) {
+myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
     $stateProvider
         .state('landing', {
             url: '/',

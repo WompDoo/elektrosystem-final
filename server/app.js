@@ -46,11 +46,24 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
 // routes
-app.use('/dashboard/', routes);
+app.use('/login/', routes);
 app.use('/testroot/', routes);
 
+app.use('/controllers', express.static(__dirname + '../client/controllers'));
+app.use('/css', express.static(__dirname + '../client/css'));
+app.use('/directives', express.static(__dirname + '../client/directives'));
+app.use('/fonts', express.static(__dirname + '../client/fonts'));
+app.use('/img', express.static(__dirname + '../client/img'));
+app.use('/partials', express.static(__dirname + '../client/partials'));
+app.use('/services', express.static(__dirname + '../client/services'));
+
 app.use(routes);
+
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, '../client', 'index.html'));
+});
 
 // error hndlers
 app.use(function(req, res, next) {
