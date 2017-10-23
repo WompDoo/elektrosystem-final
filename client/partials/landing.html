@@ -298,13 +298,14 @@
     <div scroll-bookmark="contact" class="contact">
         <div id="contact" class="col-md-6 map">
 
-            <div class="col-md-6 col-md-offset-2 gMap">
-                <a target="_tab" href="https://goo.gl/maps/fKEFDsCqwfK2">
-                    <div class="mapLink text-center">
-                        <h4>{{oneArray.MAPEXTRA}}<!--{{ 'MAPEXTRA' | translate }}--></h4>
-                    </div>
-                </a>
+            <div class="col-md-10 col-md-offset-2 gMap">
+
                 <div ng-controller="mapCtrl" ng-init="initMap()" class="map-div">
+                    <a target="_tab" href="https://goo.gl/maps/fKEFDsCqwfK2">
+                        <div class="mapLink text-center">
+                            <h4>{{oneArray.MAPEXTRA}}<!--{{ 'MAPEXTRA' | translate }}--></h4>
+                        </div>
+                    </a>
                     <div id="map">
                     </div>
                     <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
