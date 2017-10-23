@@ -304,7 +304,7 @@
                         <h4>{{oneArray.MAPEXTRA}}<!--{{ 'MAPEXTRA' | translate }}--></h4>
                     </div>
                 </a>
-                <div ng-controller="mapCtrl" ng-init="initMap()">
+                <div ng-controller="mapCtrl" ng-init="initMap()" class="map-div">
                     <div id="map">
                     </div>
                     <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>

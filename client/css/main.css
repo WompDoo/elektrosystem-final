@@ -674,7 +674,7 @@ i {
 }
 
 #map {
-    height: 525px;
+    height: 425px;
     width: 440px;
 }
 
@@ -2230,4 +2230,8 @@ and (orientation : landscape) {
     .visible-xs {
         display: inherit !important;
     }
+}
+
+.map-div, .mapLink {
+    margin-top: 100px;
 }
