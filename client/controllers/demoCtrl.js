@@ -19,6 +19,7 @@ demoCtrl.controller('demoCtrl', function ($scope, demoService, $rootScope) {
         if ($rootScope.language == "et") {
             demoService.getOneEst().then(function (data) {
                 $scope.oneArray = data;
+                $scope.mail = data.MAIL.replace('info@elektrosystem.ee', '<a href="mailto:info@elektrosystem.ee">info@elektrosystem.ee</a>');
             })
         }
         else if ($rootScope.language == "en") {

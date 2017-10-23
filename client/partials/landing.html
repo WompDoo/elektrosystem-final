@@ -187,19 +187,19 @@
                     <h3 class="col-md-12">{{oneArray.CREWNAME1}}<!--Priit Laur--></h3>
                     <img class="name-pics1" src="img/Char_grey.png">
                     <p class="col-md-12">{{oneArray.CREWPOS1}}<!--{{ 'CREWPOS1' | translate }}--></p>
-                    <p class="col-md-12">{{oneArray.CREWMAIL1}}<!--priit.laur@elektrosystem.ee--></p>
+                    <p class="col-md-12"><a href="mailto:{{oneArray.CREWMAIL1}}">{{oneArray.CREWMAIL1}}</a><!--priit.laur@elektrosystem.ee--></p>
                 </div>
                 <div class="col-md-12 person">
                     <h3 class="col-md-12">{{oneArray.CREWNAME2}}<!--Marco Kruustük--></h3>
                     <img class="name-pics" src="img/Char_fists.png">
                     <p class="col-md-12">{{oneArray.CREWPOS2}}<!--{{ 'CREWPOS2' | translate }}--></p>
-                    <p class="col-md-12">{{oneArray.CREWMAIL2}}<!--marco.kruustuk@elektrosystem.ee--></p>
+                    <p class="col-md-12"><a href="mailto:{{oneArray.CREWMAIL2}}">{{oneArray.CREWMAIL2}}</a><!--marco.kruustuk@elektrosystem.ee--></p>
                 </div>
                 <div class="col-md-12 person">
                     <h3 class="col-md-12">{{oneArray.CREWNAME3}}<!--Sander Seene--></h3>
                     <img class="name-pics2" src="img/dude.png">
                     <p class="col-md-12">{{oneArray.CREWPOS3}}<!--{{ 'CREWPOS3' | translate }}--></p>
-                    <p class="col-md-12">{{oneArray.CREWMAIL3}}<!--sander.seene@elektrosystem.ee--></p>
+                    <p class="col-md-12"><a href="mailto:{{oneArray.CREWMAIL3}}">{{oneArray.CREWMAIL3}}</a><!--sander.seene@elektrosystem.ee--></p>
                 </div>
             </div>
         </div>
@@ -312,7 +312,7 @@
             </div>
             <div class="info-box">
                 <h4><!--{{ 'CONTACTPHONE' | translate }}: -->{{oneArray.PHONE}}<!--+372 7366019--></h4>
-                <h4><!--{{ 'CONTACTEMAIL' | translate }}: -->{{oneArray.MAIL}}<!--info@elektrosystem.ee-->
+                <h4 ng-bind-html="mail"><!--{{ 'CONTACTEMAIL' | translate }}: --><!--info@elektrosystem.ee-->
                 </h4>
                 <h4><!--{{ 'CONTACTADDRESS' | translate }}: -->{{oneArray.ADDRESS}}<!--Tähe 127c, Tartu-->
                 </h4>
