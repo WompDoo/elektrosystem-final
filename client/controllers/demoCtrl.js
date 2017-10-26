@@ -1,7 +1,7 @@
 var demoCtrl = angular.module('demoCtrl', []);
 demoCtrl.controller('demoCtrl', function ($scope, demoService, $rootScope) {
 
-
+    $scope.imagePath = '../img/est-logo.svg';
 
     $scope.showLanding = false;
     $scope.toggleShowLanding = function()
@@ -21,16 +21,19 @@ demoCtrl.controller('demoCtrl', function ($scope, demoService, $rootScope) {
                 $scope.oneArray = data;
                 $scope.mail = data.MAIL.replace('info@elektrosystem.ee', '<a href="mailto:info@elektrosystem.ee">info@elektrosystem.ee</a>');
             })
+            $scope.imagePath = '../img/est-logo.svg';
         }
         else if ($rootScope.language == "en") {
             demoService.getOneEng().then(function (data) {
                 $scope.oneArray = data;
             })
+            $scope.imagePath = '../img/logo.svg';
         }
         else {
             demoService.getOneRus().then(function (data) {
                 $scope.oneArray = data;
             })
+            $scope.imagePath = '../img/logo.svg';
         }
     }, true);
 

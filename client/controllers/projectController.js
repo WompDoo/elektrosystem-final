@@ -446,6 +446,15 @@ projectController.controller('projectController', function projectController($sc
 
     }
 
+    $scope.realField = function(project, field) {
+        if ($rootScope.language == 'et') {
+            return project[field + '_ee'];
+        } else if ($rootScope.language == 'en') {
+            return project[field + '_en'];
+        } else if ($rootScope.language == 'ru') {
+            return project[field + '_ru'];
+        }
+    }
 
 
         $scope.myHTML =
